@@ -39,6 +39,17 @@ export class ExpLv implements IExpLv
 	public lv_min = 1;
 	public lv_max = 20;
 	public force_max = false;
+	public options?: IExpLvOptions;
+
+	constructor(options?: IExpLvOptions)
+	{
+		this.options = options;
+	}
+
+	static create(options?: IExpLvOptions)
+	{
+		return new this(options);
+	}
 
 	exp_table(): IExpTable
 	{
